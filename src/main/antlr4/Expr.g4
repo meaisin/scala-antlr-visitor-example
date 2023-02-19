@@ -4,6 +4,7 @@ import CommonLexerRules;
 prog: stat+;
 
 stat: expr NL               # printExpr
+    | 'clear'               # clear
     | ID '=' expr NL        # assign
     | NL                    # blank
     ;

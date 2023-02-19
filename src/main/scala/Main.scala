@@ -35,6 +35,10 @@ class EvalVisitor extends ExprBaseVisitor[Int] {
     0
   }
 
+  override def visitClear(ctx: ExprParser.ClearContext): Int = {
+    memory.clear; 0
+  }
+
   override def visitInt(ctx: ExprParser.IntContext): Int = {
     ctx.INT().getText().toInt
   }
